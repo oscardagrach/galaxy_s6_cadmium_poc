@@ -6,14 +6,16 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define BOOT_PATH		"/dev/block/sda8"
+/* Written by OscarDaGrach */
+
+#define BOOT_PATH	"/dev/block/sda8"
 #define RECOVERY_PATH	"/dev/block/sda9"
 
-#define BUF_ADDR		0x40204800 // Exynos BL scratch area
-#define TARGET_ADDR		0x43E0B000
+#define BUF_ADDR	0x40204800 // Exynos BL scratch area
+#define TARGET_ADDR	0x43E0B000
 
 #define PATCH_OFFSET	0x1FFB800
-#define PATCH_SIZE		0xB000
+#define PATCH_SIZE	0xB000
 
 #define BOOTIMG_DATA	0x130 // where to put the correct stack data in shellcode
 
@@ -194,4 +196,3 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
